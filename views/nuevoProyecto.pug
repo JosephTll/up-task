@@ -1,0 +1,15 @@
+extends layout
+
+include mixins/agregarProyecto
+
+
+block contenido
+    .contenido-principal
+        h1 #{nombrePagina}
+
+        if errores
+            each error in errores
+                .alerta #{error.texto}
+        +agregarProyecto(proyecto)
+
+        
